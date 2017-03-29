@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:test" x:Class="test.testPage">
+	<ContentPage.Content>
+		<Grid >
+			<Grid.ColumnDefinitions >
+				<ColumnDefinition Width="*"/>
+	    	</Grid.ColumnDefinitions>
+				
+	    	<Grid.RowDefinitions>
+				<RowDefinition Height="200"/>
+				<RowDefinition Height="*"/>
+	    	</Grid.RowDefinitions>
+
+			<Label Text="Vítejte" Grid.Row="0" Grid.Column="0" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="10"/>
+			<Button Text="Vstupte"  Clicked="button"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+			
+		</Grid>
+	</ContentPage.Content></ContentPage>

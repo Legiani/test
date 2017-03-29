@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="test.testListView">
+	<ContentPage.Content>
+		<Grid >
+			<Grid.ColumnDefinitions >
+				<ColumnDefinition Width="*"/>
+	    	</Grid.ColumnDefinitions>
+				
+	    	<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="7*"/>
+				<RowDefinition Height="*"/>
+	    	</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+				<Grid.ColumnDefinitions >
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="0.6*"/>
+		    	</Grid.ColumnDefinitions>
+					
+		    	<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+		    	</Grid.RowDefinitions>
+
+				<Label Text="Nadpis" Grid.Row="0" Grid.Column="0" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="10"/>
+				<Button Clicked="upButton" Text="Button" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+			</Grid>
+
+			<ListView x:Name="ListViewFormatted" ItemTapped="SelectedItemMethod" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" IsGroupingEnabled="false">
+			    <ListView.ItemTemplate>
+					<DataTemplate>
+					    <ViewCell>
+							<ViewCell.ContextActions>
+								<MenuItem Clicked="OnEdit" CommandParameter="{Binding ID}"
+					               Text="Edit" />
+					            <MenuItem Clicked="OnDelete" CommandParameter="{Binding ID}"
+					               Text="Smazat" IsDestructive="True" />
+					        </ViewCell.ContextActions>
+						    <Grid HeightRequest="100">
+							    <Grid.RowDefinitions>
+									<RowDefinition Height="*" />
+									<RowDefinition Height="*" />
+							    </Grid.RowDefinitions>
+							    <Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+							    </Grid.ColumnDefinitions>
+											
+								<Label Text="{Binding Jmeno}" Grid.RowSpan="2" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+
+								<Label Text="Prijmeni:" Grid.Row="0"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+								<Label Text="{Binding Prijmeni}" Grid.Row="1"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+
+								<Label Text="Vek:" Grid.Row="0"  Grid.Column="2" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+								<Label Text="{Binding Vek}" Grid.Row="1"  Grid.Column="2" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+
+								<Label Text="Bydliste:" Grid.Row="0"  Grid.Column="3" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+								<Label Text="{Binding Bydliste}" Grid.Row="1"  Grid.Column="3" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+							
+							</Grid>					 
+					    </ViewCell>
+					</DataTemplate>
+			    </ListView.ItemTemplate>
+ 			</ListView>
+
+			<Button Clicked="pridat" Margin="10" Text="Přidat" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

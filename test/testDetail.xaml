@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="test.testDetail">
+	
+	<ContentPage.Content>
+		<Grid >
+			<Grid.ColumnDefinitions >
+				<ColumnDefinition Width="*"/>
+	    	</Grid.ColumnDefinitions>
+				
+	    	<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="*"/>
+	    	</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0" Grid.Column="0">
+				<Grid.ColumnDefinitions >
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="0.6*"/>
+		    	</Grid.ColumnDefinitions>
+					
+		    	<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+		    	</Grid.RowDefinitions>
+
+				<Label Text="Detail" Grid.Row="0" Grid.Column="0" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="10"/>
+				<Button Clicked="upButton" Text="Button" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+			</Grid>
+
+
+		    <Grid HeightRequest="100" rid.ColumnSpan="2" Grid.Row="1">
+			    <Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+			    </Grid.RowDefinitions>
+			    <Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+			    </Grid.ColumnDefinitions>
+
+				<Label x:Name="jmeno" Grid.RowSpan="2" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+
+				<Label Text="Prijmeni:" Grid.Row="0"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+				<Label x:Name="prijmeni" Grid.Row="1"  Grid.Column="1" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+
+				<Label Text="Vek:" Grid.Row="0"  Grid.Column="2" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+				<Label x:Name="vek" Grid.Row="1"  Grid.Column="2" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+
+				<Label Text="Bydliste:" Grid.Row="0"  Grid.Column="3" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+				<Label x:Name="bydliste" Grid.Row="1"  Grid.Column="3" FontSize="11" VerticalTextAlignment="Center"  HorizontalOptions="Center"/>
+			</Grid>
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
